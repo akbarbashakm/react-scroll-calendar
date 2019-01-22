@@ -18,9 +18,7 @@ Features
 
 <div style="padding:30px">
   <img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/layout.png" width="25%"/>
-  <div style="padding-top: 12%;vertical-align: top;">
-    <img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/layout2.png" width="50%"/>
-  </div>
+  <img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/layout2.png" width="50%" style="padding-top: 12%;vertical-align: top;"/>
 </div>
 
 Getting Started
@@ -29,12 +27,6 @@ Getting Started
 Using [npm](https://www.npmjs.com/):
 ```
 npm install react-scroll-calendar --save
-```
-
-ES6, CommonJS, and UMD builds are available with each distribution. For example:
-```js
-import MobileCalendar from 'react-scroll-calendar';
-import "react-scroll-calendar/build/react-scroll-calendar.css"; // Make sure to import the default stylesheet
 ```
 
 Usage
