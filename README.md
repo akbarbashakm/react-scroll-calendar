@@ -17,8 +17,8 @@ Features
 * **Mobile-friendly** – Silky smooth scrolling on mobile
 
 <div style="padding:30px">
-<img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/layout.png" style="max-width:25%;"/>
-<img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/layout2.png" style="max-width:25%;"/>
+<img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/layout.png" width="25%"/>
+<img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/layout2.png" width="50%; padding-top: 12%;vertical-align: top;"/>
 </div>
 
 Getting Started
@@ -61,14 +61,19 @@ render(
 | Property             | Type     | Default                | Description                                                                                                                                      |
 |:---------------------|:---------|:-----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|
 | minDate              | moment   | `moment().add(1, 'd')` | The minimum date that is selectable.
+                                                                                        |
 
 | maxDate              | moment   | `moment().add(9, 'M')` | The maximum date that is selectable.
+                                                                                        |
 
 | selectedDate         | moment   | `null`                 | The selected date of the calendar.
+                                                                                        |
 
-| className            | String   | ``                     | Optional CSS class name to append to the root element.                                                                                                                          
+| className            | String   | ``                     | Optional CSS class name to append to the root element.
+                                                                                        |  
+
 | onSelect             | Function |                        | Callback invoked after select() returns the current selected
-
+                                                                                        |
 Compatibility
 ------------
 
