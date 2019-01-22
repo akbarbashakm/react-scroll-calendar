@@ -17,7 +17,8 @@ Features
 * **Mobile-friendly** – Silky smooth scrolling on mobile
 
 <div style="padding:30px">
-<img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/layout.png" />
+<img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/layout.png" style="max-width:25%;"/>
+<img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/layout2.png" style="max-width:25%;"/>
 </div>
 
 Getting Started
@@ -57,17 +58,16 @@ render(
 ```
 
 ### Prop Types
-| Property       | Type            | Default                                                                                                                              | Description                                                                                                                                                                                                                      |
-|:---------------|:----------------|:-------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-                                                                                                                                                                                      |
-| minDate        | Date            | `moment().add(1, 'd')`                                                                                                               | The minimum date that is selectable.                                                                                                                                                                                             |
-| maxDate        | Date            | `moment().add(9, 'M')`                                                                                                             | The maximum date that is selectable.
+| Property             | Type     | Default                | Description                                                                                                                                      |
+|:---------------------|:---------|:-----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|
+| minDate              | moment   | `moment().add(1, 'd')` | The minimum date that is selectable.
 
-| selectedDate        | Date            | null  
-                                                    | The maximum date that is selectable.                                                       
+| maxDate              | moment   | `moment().add(9, 'M')` | The maximum date that is selectable.
 
-| className      | String          |       null                                                                                                                               | Optional CSS class name to append to the root element.                                                                                                                                                        |
-| onSelect       | Function        |                                                                                                                                      | Callback invoked after select() returns the current selected date value                                                                                                                                 |
+| selectedDate         | moment   | `null`                 | The selected date of the calendar.
+
+| className            | String   | ``                     | Optional CSS class name to append to the root element.                                                                                                                          
+| onSelect             | Function |                        | Callback invoked after select() returns the current selected
 
 Compatibility
 ------------
@@ -86,7 +86,7 @@ Latest compatible versions:
 
 ### Moment.js
 
-Currently we are using Moment.js. in future we will switched to native Date objects to reduce the size of the package. Please see the example for [moment.js](https://momentjs.com/).
+Currently we are using Moment.js. In future we will switch to native Date objects to reduce the size of the package. Please see the example for [moment.js](https://momentjs.com/).
 
 ### Browser Support
 
