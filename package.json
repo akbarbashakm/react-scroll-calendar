@@ -1,0 +1,58 @@
+{
+  "name": "react-scroll-calendar",
+  "version": "0.0.1",
+  "description": "A simple and reusable calendar component for React",
+  "license": "MIT",
+  "main": "build/index.js",
+  "keywords": [
+    "react",
+    "datepicker",
+    "calendar",
+    "date",
+    "react-component",
+    "scroll-calendar",
+    "mobile-calendar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/akbarbashakm/react-scroll-calendar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/akbarbashakm/react-scroll-calendar/issues"
+  },
+  "peerDependencies": {
+    "react": "^15.5.4"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "webpack": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build-css": "lessc ./src/styles/App.less build/react-scroll-calendar.css",
+    "build": "webpack & npm run build-css"
+  },
+  "author": {
+    "name": "Akbar Basha",
+    "email": "km.akbarbasha@gmail.com"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.7",
+    "@types/moment": "^2.13.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "less-loader": "^4.1.0",
+    "moment": "^2.24.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

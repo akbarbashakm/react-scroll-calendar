@@ -1,0 +1,99 @@
+.mobile-datepicker {
+    .clearfix();
+    .fw();
+    .color-grey-secondary();
+  
+    // MONTH
+    .month {
+      .clearfix();
+      .fw();
+      .mbottom-medium();
+  
+      // MONTH TITLE
+      .month-title {
+        .clearfix();
+        .fw();
+        .text-center();
+        .bold();
+        .main-para();
+        .mbottom-medium();
+  
+        span {
+          .light();
+          .fine-text();
+          .color-grey-medium();
+          display: block;
+          line-height: 1;
+        }
+      }
+  
+      ul {
+        .clearfix();
+        .list-unstyled();
+        margin: 0 -2px;
+  
+        li {
+          .pull-left();
+          .text-center();
+          width: 13.28%;
+          padding: 0 2px;
+        }
+  
+        // DAYS
+        &.days {
+          margin-bottom: 4px;
+  
+          li {
+            .bold();
+            .fine-text();
+            .text-uppercase();
+            .color-grey-light();
+          }
+        }
+  
+        // DATE
+        &.date {
+          li {
+            .small-heading-sm();
+            .light();
+            .mbottom-small();
+            min-height: 32px;
+            .cursor-pointer();
+  
+            span {
+              display: inline-block;
+              vertical-align: top;
+              width: 32px;
+              height: 32px;
+              line-height: 32px;
+              .border-radius(100%);
+            }
+  
+            &.active {
+              span {
+                .bg-grey-secondary();
+                .bold();
+                .color-white();
+              }
+            }
+  
+            &.disabled {
+              pointer-events: none;
+  
+              span {
+                .color-grey-light();
+                .cursor-not-allowed();
+              }
+            }
+  
+            &.vis-hidden {
+              .opacity(0);
+              visibility: hidden;
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  
