@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import { isSameDate, isDisabled } from './utils/utils';
 
 export default class ScrollCalendar extends Component {
@@ -30,11 +31,10 @@ export default class ScrollCalendar extends Component {
   componentDidMount() {
     this.setSelectedDate(this.props.selectedDate);
     let element = document.getElementById(
-      moment(this.props.selectedDate, 'DD/MMM/YYYY').format('MMMM')
+      moment(this.props.selectedDate, 'DD/MMM/YYYY').format('MMMM-YYYY')
     );
     if (element) {
       element.scrollIntoView();
-      document.getElementsByClassName('modal-body')[0].scrollTop -= 60;
     }
   }
 
@@ -51,8 +51,9 @@ export default class ScrollCalendar extends Component {
       selectedDate: this.state.selectedDate,
       handleSelect: this.handleSelectedDate
     };
+    let className = this.props.className + ' mobile-datepicker'
     return (
-      <div class="mobile-datepicker">
+      <div className={className}>
         <RenderCalendarYear {...props} />
       </div>
     );
@@ -76,7 +77,7 @@ export const RenderCalendarYear = props => {
 export const RenderMonthCard = props => {
   let now = props.currentMonth;
   return (
-    <section class="month" id={now.format('MMMM')}>
+    <section className="month" id={now.format('MMMM-YYYY')}>
       <RenderMonthHeader date={now} />
       <RenderDayHeader />
       <RenderDays date={now} {...props} />
@@ -88,7 +89,7 @@ export const RenderMonthHeader = props => {
   let month = props.date.format('MMMM');
   let year = props.date.format('YYYY');
   return (
-    <p class="month-title">
+    <p className="month-title">
       <span>{year}</span>
       {month}
     </p>
@@ -97,14 +98,14 @@ export const RenderMonthHeader = props => {
 
 export const RenderDayHeader = () => {
   return (
-    <ul class="days">
-      <li>Su</li>
-      <li>Mo</li>
-      <li>Tu</li>
-      <li>We</li>
-      <li>Th</li>
-      <li>Fr</li>
-      <li>Sa</li>
+    <ul className="days">
+      <li key={'Sunday'}>Su</li>
+      <li key={'Monday'}>Mo</li>
+      <li key={'Tuesday'}>Tu</li>
+      <li key={'Wednesday'}>We</li>
+      <li key={'Thursday'}>Th</li>
+      <li key={'Friday'}>Fr</li>
+      <li key={'Saturday'}>Sa</li>
     </ul>
   );
 };
@@ -119,6 +120,7 @@ export const RenderSingleDay = ({
   return (
     <li
       className={className}
+      key={currentValue}
       onClick={e => handleClick(e, currentValue)}
     >
       <span>{currentValue.date()}</span>
@@ -156,14 +158,27 @@ export const RenderDays = ({
   let renderUnwantedDay = balanceDayCount => {
     let elements = [];
     for (let i = 0; i < balanceDayCount; i++) {
-      elements.push(<li class="visible-hidden" />);
+      elements.push(<li className="visible-hidden" key={i} />);
     }
     return elements;
   };
   return (
-    <ul class="date">
+    <ul className="date">
       {renderUnwantedDay(balanceDayCount)}
       {renderDay(selectedDate, startDate)}
     </ul>
   );
+};
+
+ScrollCalendar.propTypes = {
+  minDate: PropTypes.moment,
+  maxDate: PropTypes.moment,
+  selectedDate: PropTypes.moment,
+  onSelect: PropTypes.func
+};
+
+ScrollCalendar.defaultProps = {
+  minDate: moment().add(1, 'd'),
+  maxDate: moment().add(9, 'M'),
+  selectedDate: null
 };
