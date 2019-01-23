@@ -1,4 +1,4 @@
-<div align="center">
+<div>
 <img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/header.jpeg" width="180"/>
 </div>
 
