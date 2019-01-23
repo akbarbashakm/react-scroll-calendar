@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import moment from 'moment';
-import PropTypes from 'prop-types';
 import { isSameDate, isDisabled } from './utils/utils';
 
 export default class ScrollCalendar extends Component {
@@ -49,13 +48,11 @@ export default class ScrollCalendar extends Component {
       minDate: this.props.minDate,
       maxDate: this.props.maxDate,
       selectedDate: this.state.selectedDate,
-      handleSelect: this.handleSelectedDate
+      handleSelect: this.handleSelectedDate,
+      className: this.props.className + ' mobile-datepicker'
     };
-    let className = this.props.className + ' mobile-datepicker'
     return (
-      <div className={className}>
-        <RenderCalendarYear {...props} />
-      </div>
+      <RenderCalendarYear {...props} />
     );
   }
 }
@@ -71,7 +68,11 @@ export const RenderCalendarYear = props => {
     );
     now = now.add(1, 'M');
   }
-  return elements;
+  return (
+    <div className={props.className}>
+      {elements}
+    </div>
+  );
 };
 
 export const RenderMonthCard = props => {
@@ -114,13 +115,14 @@ export const RenderSingleDay = ({
   isActive,
   handleClick,
   currentValue,
-  isDisabled
+  isDisabled,
+  i
 }) => {
   let className = '' + (isActive ? 'active' : '') + (isDisabled ? 'disabled' : '')
   return (
     <li
       className={className}
-      key={currentValue}
+      key={i}
       onClick={e => handleClick(e, currentValue)}
     >
       <span>{currentValue.date()}</span>
@@ -149,6 +151,7 @@ export const RenderDays = ({
           isDisabled={isDisabled(minDate, now.clone(), maxDate)}
           handleClick={handleSelect}
           currentValue={now.clone()}
+          key={i}
         />
       );
       now = now.add(1, 'days');
@@ -168,13 +171,6 @@ export const RenderDays = ({
       {renderDay(selectedDate, startDate)}
     </ul>
   );
-};
-
-ScrollCalendar.propTypes = {
-  minDate: PropTypes.moment,
-  maxDate: PropTypes.moment,
-  selectedDate: PropTypes.moment,
-  onSelect: PropTypes.func
 };
 
 ScrollCalendar.defaultProps = {
