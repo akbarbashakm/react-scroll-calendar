@@ -87,7 +87,7 @@ Unfortunately, it is difficult to support legacy browsers while maintaining our 
 
 Reporting Issues
 ----------------
-If you find an [issue](https://github.com/clauderic/react-scroll-calendar/issues), please report it along with any relevant details to reproduce it. The easiest way to do so is to [fork this sandbox on CodeSandbox](https://codesandbox.io/s/wqp65ryp5).
+If you find an [issue](https://github.com/akbarbashakm/react-scroll-calendar/issues), please report it along with any relevant details to reproduce it. The easiest way to do so is to [fork this sandbox on CodeSandbox](https://codesandbox.io/s/wqp65ryp5).
 
 License
 ---------
