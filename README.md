@@ -6,6 +6,8 @@
 [![npm version](https://img.shields.io/npm/v/react-scroll-calendar.svg)](https://www.npmjs.com/package/react-scroll-calendar)
 [![downloads](https://img.shields.io/npm/dm/react-scroll-calendar.svg)](https://www.npmjs.com/package/react-scroll-calendar)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/akbarbashakm/react-scroll-calendar/blob/master/LICENSE)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/akbarbashakm/react-scroll-calendar.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/akbarbashakm/react-scroll-calendar/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/akbarbashakm/react-scroll-calendar.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/akbarbashakm/react-scroll-calendar/context:javascript)
 
 A simple and reusable Scrollable-Calendar component for React ([Demo](https://codesandbox.io/s/wqp65ryp5))
 
@@ -61,21 +63,17 @@ render(
 | selectedDate         | moment   | null                   | The selected date of the calendar.                            |
 | className            | String   | null                   | Optional CSS class name to append to the root element.        |  
 | onSelect             | Function |                        | Callback invoked after select() returns the current selected. |
+| monthFormat          | String   | `MMMM`                 | Label format for the month tile.                              |
+| yearFormat           | String   | `YYYY`                 | Label format for the year tile.                               |
+| enableYearTitle      | Boolean   | true                  | Option to enable / disable the year in header.                |
+| enableMonthTitle     | Boolean   | true                  | Option to enable / disable the month in header.               |
 
 Compatibility
 ------------
 
 ### React
 
-We're always trying to stay compatible with the latest version of React. We can't support all older versions of React.
-
-Latest compatible versions:
-
-- React 15.5 or newer: All above React-datepicker v.0.40.0
-- React 15.4.1: needs React-datepicker v0.40.0, newer won't work (due to react-onclickoutside dependencies)
-- React 0.14 or newer: All above React-datepicker v0.13.0
-- React 0.13: React-datepicker v0.13.0
-- pre React 0.13: React-datepicker v0.6.2
+We're always trying to stay compatible with the latest version of React.
 
 ### Moment.js
 

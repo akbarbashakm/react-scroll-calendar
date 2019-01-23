@@ -53,6 +53,9 @@
 .bg-grey-secondary {
   background-color: #53576d;
 }
+.bg-grey-light {
+  background-color: #cccccc;
+}
 .color-white {
   color: #ffffff;
 }
@@ -160,6 +163,12 @@
   border-top-left-radius: 100%;
   border-bottom-right-radius: 100%;
   border-bottom-left-radius: 100%;
+}
+.mobile-datepicker .month ul.date li span:hover,
+.mobile-datepicker .month ul.date li span:focus {
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
 }
 .mobile-datepicker .month ul.date li.active span {
   background-color: #53576d;

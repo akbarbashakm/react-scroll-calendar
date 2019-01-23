@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
 import { isSameDate, isDisabled } from './utils/utils';
 
@@ -49,7 +49,11 @@ export default class ScrollCalendar extends Component {
       maxDate: this.props.maxDate,
       selectedDate: this.state.selectedDate,
       handleSelect: this.handleSelectedDate,
-      className: this.props.className + ' mobile-datepicker'
+      className: this.props.className + ' mobile-datepicker',
+      yearFormat: this.props.yearFormat,
+      monthFormat: this.props.monthFormat,
+      enableYearTitle: this.props.enableYearTitle,
+      enableMonthTitle: this.props.enableMonthTitle
     };
     return (
       <RenderCalendarYear {...props} />
@@ -79,7 +83,7 @@ export const RenderMonthCard = props => {
   let now = props.currentMonth;
   return (
     <section className="month" id={now.format('MMMM-YYYY')}>
-      <RenderMonthHeader date={now} />
+      <RenderMonthHeader date={now} {...props}/>
       <RenderDayHeader />
       <RenderDays date={now} {...props} />
     </section>
@@ -87,12 +91,12 @@ export const RenderMonthCard = props => {
 };
 
 export const RenderMonthHeader = props => {
-  let month = props.date.format('MMMM');
-  let year = props.date.format('YYYY');
+  let month = props.date.format(props.monthFormat);
+  let year = props.date.format(props.yearFormat);
   return (
     <p className="month-title">
-      <span>{year}</span>
-      {month}
+      {props.enableYearTitle ? <span>{year}</span> : null}
+      {props.enableMonthTitle ? month : null}
     </p>
   );
 };
@@ -123,9 +127,8 @@ export const RenderSingleDay = ({
     <li
       className={className}
       key={i}
-      onClick={e => handleClick(e, currentValue)}
     >
-      <span>{currentValue.date()}</span>
+      <span onClick={e => handleClick(e, currentValue)}>{currentValue.date()}</span>
     </li>
   );
 };
@@ -168,7 +171,7 @@ export const RenderDays = ({
   return (
     <ul className="date">
       {renderUnwantedDay(balanceDayCount)}
-      {renderDay(selectedDate, startDate)}
+      {renderDay()}
     </ul>
   );
 };
@@ -176,5 +179,9 @@ export const RenderDays = ({
 ScrollCalendar.defaultProps = {
   minDate: moment().add(1, 'd'),
   maxDate: moment().add(9, 'M'),
-  selectedDate: null
+  selectedDate: null,
+  monthFormat: 'MMMM',
+  yearFormat: 'YYYY',
+  enableYearTitle: true,
+  enableMonthTitle: true
 };

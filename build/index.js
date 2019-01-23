@@ -17001,7 +17001,11 @@ var ScrollCalendar = function (_Component) {
         maxDate: this.props.maxDate,
         selectedDate: this.state.selectedDate,
         handleSelect: this.handleSelectedDate,
-        className: this.props.className + ' mobile-datepicker'
+        className: this.props.className + ' mobile-datepicker',
+        yearFormat: this.props.yearFormat,
+        monthFormat: this.props.monthFormat,
+        enableYearTitle: this.props.enableYearTitle,
+        enableMonthTitle: this.props.enableMonthTitle
       };
       return _react2.default.createElement(RenderCalendarYear, props);
     }
@@ -17034,24 +17038,24 @@ var RenderMonthCard = exports.RenderMonthCard = function RenderMonthCard(props) 
   return _react2.default.createElement(
     'section',
     { className: 'month', id: now.format('MMMM-YYYY') },
-    _react2.default.createElement(RenderMonthHeader, { date: now }),
+    _react2.default.createElement(RenderMonthHeader, _extends({ date: now }, props)),
     _react2.default.createElement(RenderDayHeader, null),
     _react2.default.createElement(RenderDays, _extends({ date: now }, props))
   );
 };
 
 var RenderMonthHeader = exports.RenderMonthHeader = function RenderMonthHeader(props) {
-  var month = props.date.format('MMMM');
-  var year = props.date.format('YYYY');
+  var month = props.date.format(props.monthFormat);
+  var year = props.date.format(props.yearFormat);
   return _react2.default.createElement(
     'p',
     { className: 'month-title' },
-    _react2.default.createElement(
+    props.enableYearTitle ? _react2.default.createElement(
       'span',
       null,
       year
-    ),
-    month
+    ) : null,
+    props.enableMonthTitle ? month : null
   );
 };
 
@@ -17109,14 +17113,13 @@ var RenderSingleDay = exports.RenderSingleDay = function RenderSingleDay(_ref) {
     'li',
     {
       className: className,
-      key: i,
-      onClick: function onClick(e) {
-        return handleClick(e, currentValue);
-      }
+      key: i
     },
     _react2.default.createElement(
       'span',
-      null,
+      { onClick: function onClick(e) {
+          return handleClick(e, currentValue);
+        } },
       currentValue.date()
     )
   );
@@ -17159,14 +17162,18 @@ var RenderDays = exports.RenderDays = function RenderDays(_ref2) {
     'ul',
     { className: 'date' },
     renderUnwantedDay(balanceDayCount),
-    renderDay(selectedDate, startDate)
+    renderDay()
   );
 };
 
 ScrollCalendar.defaultProps = {
   minDate: (0, _moment2.default)().add(1, 'd'),
   maxDate: (0, _moment2.default)().add(9, 'M'),
-  selectedDate: null
+  selectedDate: null,
+  monthFormat: 'MMMM',
+  yearFormat: 'YYYY',
+  enableYearTitle: true,
+  enableMonthTitle: true
 };
 
 /***/ }),
