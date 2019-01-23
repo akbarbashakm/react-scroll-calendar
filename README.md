@@ -14,8 +14,8 @@ A simple and reusable Scrollable-Calendar component for React ([Demo](https://co
 Features
 ---------------
 
-* **Scroll** – Just keep scrolling', just keep scrollin'
-* **Flexible** – Min/max date and selcted date.
+* **Scroll** – Just keep scrolling', just keep scrolling'
+* **Flexible** – Min/max date and selected date.
 * **Customizeable** – Customize and theme to your heart's content.
 * **Events and callbacks** – onSelect.
 * **Mobile-friendly** – Silky smooth scrolling on mobile
@@ -63,8 +63,8 @@ render(
 | selectedDate         | moment   | null                   | The selected date of the calendar.                            |
 | className            | String   | null                   | Optional CSS class name to append to the root element.        |  
 | onSelect             | Function |                        | Callback invoked after select() returns the current selected. |
-| monthFormat          | String   | `MMMM`                 | Label format for the month tile.                              |
-| yearFormat           | String   | `YYYY`                 | Label format for the year tile.                               |
+| monthFormat          | String   | `MMMM`                 | Label format for the month title.                             |
+| yearFormat           | String   | `YYYY`                 | Label format for the year title.                              |
 | enableYearTitle      | Boolean   | true                  | Option to enable / disable the year in header.                |
 | enableMonthTitle     | Boolean   | true                  | Option to enable / disable the month in header.               |
 

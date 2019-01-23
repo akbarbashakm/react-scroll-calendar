@@ -7,7 +7,7 @@
   "dependencies": {
     "react": "16.5.2",
     "react-dom": "16.5.2",
-    "react-scroll-calendar": "^0.0.6",
+    "react-scroll-calendar": "^1.0.0",
     "moment": "^2.24.0",
     "react-scripts": "2.0.3"
   },
