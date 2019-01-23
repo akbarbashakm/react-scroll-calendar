@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/clauderic/react-infinite-calendar/master/.github/logo.png" width="180"/>
+<img src="https://raw.githubusercontent.com/akbarbashakm/react-scroll-calendar/master/logo/header.jpeg" width="180"/>
 </div>
 
 # React Scroll Calendar
