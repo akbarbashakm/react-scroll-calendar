@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-calendar",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A simple and reusable calendar component for React",
   "license": "MIT",
   "main": "build/index.js",
@@ -12,7 +12,10 @@
     "react-component",
     "scroll-calendar",
     "mobile-calendar",
-    "react-scroll-calendar"
+    "react-scroll-calendar",
+    "react calendar mobile",
+    "react touchable calendar",
+    "react ui"
   ],
   "repository": {
     "type": "git",
