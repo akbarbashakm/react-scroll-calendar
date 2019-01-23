@@ -7,7 +7,7 @@
 [![downloads](https://img.shields.io/npm/dm/react-scroll-calendar.svg)](https://www.npmjs.com/package/react-scroll-calendar)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/akbarbashakm/react-scroll-calendar/blob/master/LICENSE)
 
-A simple and reusable Scrollble-Calendar component for React ([Demo](https://codesandbox.io/s/wqp65ryp5))
+A simple and reusable Scrollable-Calendar component for React ([Demo](https://codesandbox.io/s/wqp65ryp5))
 
 Features
 ---------------
